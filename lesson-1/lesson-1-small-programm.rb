@@ -12,6 +12,13 @@ while flag
 		puts "Пока!"
 		break
 	end
+
+	if value == "once"
+		flag = false
+		puts "Программа выполнит вычисления только один раз."
+		value = gets.chomp
+	end
+	
 	splited_values = value.split " "
 	result = []
 	operation  = ""
