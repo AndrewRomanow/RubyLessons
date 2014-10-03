@@ -19,18 +19,20 @@ while working
 
 	data = value.split(//)
 	data -= [' ', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's' ,'d', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'] 
-	if data [0] == ['-', '+', '/', '*']
-		data = data.delete_at(0)	#убрать первый элемент массива data!!!
+	if data [0] == ['-'] or ['+'] or ['/'] or ['*']
+		data [0] = '0'
 	end
 
 	operands = data
 	operators = data
 
+	operands.join('//')
+	operands.split('-')# or '+' or '/' or '*')!!!!!!!!!!!!!!!!!!!
 	operands -= ['-', '+', '/', '*']
 	operators -= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 	p data
-	p operands [0...5]
-	p operators [0...5]
+	puts "Операнды #{operands [0...5]}"
+	puts "Операторы #{operators [0...5]}"
 
 
 	#if splited_values.lenth <= 2
