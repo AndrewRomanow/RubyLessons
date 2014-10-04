@@ -27,15 +27,32 @@ while working
 		data [0] = '0'
 	end
 
-	operands = data
+	operands = data	# => массивы
 	operators = data
 
 	operands = operands.join	# => строка
 	operands = operands.split /[\D]/
 	operators -= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 	p data
-	puts "Операнды #{operands [0...9]}"
-	puts "Операторы #{operators [0...9]}"
+	puts "Операнды #{operands}"
+	puts "Операторы #{operators}"
+
+	tmpResult = 0
+	indOp = 0
+	puts operators [1]
+
+	#if operators [indOp] <= 2 #operators.length #нужно сравнить по индексу, а не по значению
+	#	puts "условие работает"
+	#end
+
+	#case operators [indOp] <= operators.lenth
+	#when '+'
+	#	tmpResult = operands[indOp] + operands[indOp + 1]
+	#	indOp += 1
+	#else puts "Другое действие"
+	#end
+	#puts "Результат #{tmpResult}"
+
 
 
 	#if splited_values.lenth <= 2
