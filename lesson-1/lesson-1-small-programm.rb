@@ -4,6 +4,10 @@
 #3. В случае некорректного ввода пользователя вывести сообщение с описанием поддерживаемых операций. Отрабовать команду 
 # "help". 
 
+class String
+    alias / :split
+end
+
 working = true
 while working
 	puts "Введите выражение для вычисления: "
@@ -26,13 +30,12 @@ while working
 	operands = data
 	operators = data
 
-	operands.join('//')
-	operands.split('-')# or '+' or '/' or '*')!!!!!!!!!!!!!!!!!!!
-	operands -= ['-', '+', '/', '*']
+	operands = operands.join	# => строка
+	operands = operands.split /[\D]/
 	operators -= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 	p data
-	puts "Операнды #{operands [0...5]}"
-	puts "Операторы #{operators [0...5]}"
+	puts "Операнды #{operands [0...9]}"
+	puts "Операторы #{operators [0...9]}"
 
 
 	#if splited_values.lenth <= 2
