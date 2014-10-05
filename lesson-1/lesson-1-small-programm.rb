@@ -23,35 +23,49 @@ while working
 
 	data = value.split(//)
 	data -= [' ', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's' ,'d', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'] 
-	if data [0] == ['-'] or ['+'] or ['/'] or ['*']
-		data [0] = '0'
-	end
+	#if data [0] == ['-'] or ['+'] or ['/'] or ['*']	#!!!неправильно работает
+	#	data [0] = '0'
+	#end
 
 	operands = data	# => массивы
 	operators = data
 
 	operands = operands.join	# => строка
 	operands = operands.split /[\D]/
+
+	#operands = 
+	#operands.to_i
+
 	operators -= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-	p data
-	puts "Операнды #{operands}"
+	#puts "Входные данные: #{data}"
+	puts "Операнды #{operands}"	# => строка
 	puts "Операторы #{operators}"
 
-	tmpResult = 0
+	operands = operands.to_a	#!!!!! видит только первый символ
+	tmpResult = operands [0]
 	indOp = 0
-	puts operators [1]
 
-	#if operators [indOp] <= 2 #operators.length #нужно сравнить по индексу, а не по значению
+	#if operators [indOp].to_i <= operators.length
 	#	puts "условие работает"
 	#end
 
-	#case operators [indOp] <= operators.lenth
-	#when '+'
-	#	tmpResult = operands[indOp] + operands[indOp + 1]
-	#	indOp += 1
-	#else puts "Другое действие"
+	#for (indOp = 0, operators [indOp].to_i <= operators.lenth, )
+		case #operators [indOp].to_i <= operators.lenth
+		when operators[indOp] == '+'
+			tmpResult = tmpResult[0].to_i + operands[indOp + 1].to_i
+			#indOp += 1
+		when operators[indOp] == '-'
+			tmpResult = tmpResult[0].to_i - operands[indOp + 1].to_i
+			#indOp += 1
+		when operators[indOp] == '/'
+			tmpResult = tmpResult[0].to_i / operands[indOp + 1].to_i
+			#indOp += 1		
+		else operators[indOp] == '*'
+			tmpResult = tmpResult[0].to_i * operands[indOp + 1].to_i
+			#indOp += 1		
+		end
 	#end
-	#puts "Результат #{tmpResult}"
+	puts "Результат #{tmpResult} \n"
 
 
 
